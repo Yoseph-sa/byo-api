@@ -33,6 +33,7 @@ export default {
       title: 'Cover Image',
       type: 'image',
       options: {hotspot: true},
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'mainImage',
@@ -44,6 +45,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'text',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'category',
@@ -51,6 +53,7 @@ export default {
       type: 'reference',
       to: [{type: 'category'}],
       description: 'Select a category for this project',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'is_show_homeScreen',
