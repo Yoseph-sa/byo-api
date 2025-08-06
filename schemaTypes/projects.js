@@ -42,6 +42,24 @@ export default {
       options: {hotspot: true},
     },
     {
+      name: 'project_categories',
+      title: 'Project Categories (label)',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Category Name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
