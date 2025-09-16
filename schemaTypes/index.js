@@ -7,7 +7,8 @@ import gallery from './gallery'
 import home from './home'
 import projects from './projects'
 import services from './services'
-
+import newProjects from './newProjects'
+import { blocks } from './blocks'
 export const schemaTypes = [
   home,
   category,
@@ -18,4 +19,6 @@ export const schemaTypes = [
   contact,
   faq,
   gallery,
+  newProjects,
+  ...blocks
 ]
