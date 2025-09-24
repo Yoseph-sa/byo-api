@@ -9,6 +9,7 @@ import statsBlock from './statsBlock'
 import embedBlock from './embedBlock'
 import spacerBlock from './spacerBlock'
 import multiImageSliderBlock from './multiImageSliderBlock'
+import scrollImageBlock from './scrollImageBlock'
 
 export const blocks = [
   heroBlock,
@@ -19,6 +20,7 @@ export const blocks = [
   sliderBlock,
   quoteBlock,
   statsBlock,
+  scrollImageBlock,
   multiImageSliderBlock,
   embedBlock,
   spacerBlock,

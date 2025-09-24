@@ -42,6 +42,7 @@ export default {
         {type: 'sliderBlock'},
         {type: 'quoteBlock'},
         {type: 'statsBlock'},
+        {type: 'scrollImageBlock'},
         {type: 'multiImageSliderBlock'},
         {type: 'embedBlock'},
         {type: 'spacerBlock'},
