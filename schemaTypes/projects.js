@@ -11,28 +11,34 @@ export default {
         Rule.required().custom(async (title, context) => {
           if (!title) return true
 
-          const client = context.getClient({apiVersion: '2023-01-01'})
-
-          // strip the drafts. prefix (if any) to get the base ID
+          const client = context.getClient({ apiVersion: '2023-01-01' })
           const baseId = context.document._id.replace(/^drafts\./, '')
-
-          // ignore both the draft and published versions of THIS doc
           const existing = await client.fetch(
             `*[_type == "projects" 
-           && title == $title 
-           && !(_id in [$baseId, "drafts." + $baseId])
-        ][0]`,
-            {title, baseId},
+              && title == $title 
+              && !(_id in [$baseId, "drafts." + $baseId])
+            ][0]`,
+            { title, baseId },
           )
 
           return existing ? 'Title must be unique across all projects' : true
         }),
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
-      options: {hotspot: true},
+      options: { hotspot: true },
       validation: (Rule) => Rule.required(),
     },
     {
