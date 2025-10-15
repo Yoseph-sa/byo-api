@@ -11,18 +11,18 @@ export default {
         {
           type: 'block',
           styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
+            {title: 'Normal', value: 'normal'},
+            {title: 'H2', value: 'h2'},
+            {title: 'H3', value: 'h3'},
           ],
           lists: [
-            { title: 'Bullet', value: 'bullet' },
-            { title: 'Numbered', value: 'number' },
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Numbered', value: 'number'},
           ],
           marks: {
             decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
             ],
             annotations: [
               {
@@ -42,5 +42,50 @@ export default {
         },
       ],
     },
+    {
+      name: 'clientList',
+      title: 'Client List',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Client Name',
+              type: 'string',
+            },
+          ],
+          preview: {
+            select: {title: 'name'},
+          },
+        },
+      ],
+    },
+    {
+      name: 'links',
+      title: 'Multiple Links',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Link Name',
+              type: 'string',
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+            },
+          ],
+          preview: {
+            select: {title: 'name', subtitle: 'url'},
+          },
+        },
+      ],
+    },
   ],
-};
+}
